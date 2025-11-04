@@ -1,0 +1,483 @@
+/* ===========================
+   🔹 RESET Y BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
+}
+
+body {
+  background: url('https://www.transparenttextures.com/patterns/coffee-wallpaper.png');
+  background-color: #e0c7a9;
+  color: #4B2E2B;
+  line-height: 1.6;
+  font-size: 20px;
+  background-repeat: repeat;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   🔹 HEADER
+=========================== */
+header {
+  background-color: #4B2E2B;
+  color: #F5F3EB;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  background-image: url('/imagenes/00fv.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+header .logo {
+  width: 150px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  border: 2px solid #F5F3EB;
+}
+
+/* Navegación */
+nav {
+  margin-top: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+nav a {
+  color: #F5F3EB;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #D4AF37;
+}
+
+/* ===========================
+   🔹 HERO
+=========================== */
+.hero {
+  background-color: #EADACB;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn {
+  background-color: #A9746E;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #8a5b55;
+}
+
+/* ===========================
+   🔹 SECCIONES DE MENÚ
+=========================== */
+.menu-section {
+  padding: 3rem 2rem;
+}
+
+.menu-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  border-bottom: 2px solid #A9746E;
+}
+
+section h3 {
+  color: #4B2E2B;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  border-left: 5px solid #A9746E;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.product-card {
+  background-color: #EADACB;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.precio {
+  font-size: 1.6rem;
+  color: #D4AF37;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+
+/* ===========================
+   🔹 SECCIONES INFORMACIÓN
+=========================== */
+#precios, #horarios, #promociones, #contacto {
+  padding: 2rem;
+  background-color: #FFF;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(75, 46, 43, 0.1);
+}
+
+#precios h2,
+#horarios h2,
+#promociones h2,
+#contacto h2 {
+  color: #4B2E2B;
+  margin-bottom: 1rem;
+}
+
+/* ===========================
+   🔹 MODAL E INGREDIENTES
+=========================== */
+.ingredientes-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color:#4B2E2B;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.ingredientes-btn:hover {
+  background-color: #8a5b55;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+}
+
+/* BOTÓN CERRAR (X) */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #A9746E;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #D9534F;
+}
+
+/* BOTÓN VOLVER */
+.volver-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #A9746E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.volver-btn:hover {
+  background-color: #8a5b55;
+  transform: scale(1.05);
+}
+
+/* ===========================
+   🔹 RESEÑAS
+=========================== */
+.reseñas-section {
+  padding: 2rem;
+  background-color: #fff;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(75, 46, 43, 0.1);
+  color: #4B2E2B;
+}
+
+.reseñas-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #A9746E;
+  padding-bottom: 0.5rem;
+}
+
+/* Formulario */
+#form-reseñas label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #4B2E2B;
+}
+
+#form-reseñas select,
+#form-reseñas textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  background-color: #F9F6F0;
+}
+
+/* BOTONES DE RESEÑAS */
+#form-reseñas button {
+  margin-top: 1.2rem;
+  background-color: #A9746E;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#form-reseñas button:hover {
+  background-color: #8a5b55;
+  transform: scale(1.05);
+}
+
+/* BOTÓN BORRAR TODAS LAS RESEÑAS */
+#borrar-reseñas {
+  background-color: #D9534F;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#borrar-reseñas:hover {
+  background-color: #b52e28;
+  transform: scale(1.05);
+}
+
+/* Lista de reseñas */
+.reseña {
+  background-color: #EADACB;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   🔹 FOOTER
+=========================== */
+footer {
+  background-color: #4B2E2B;
+  color: #F5F3EB;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   🔹 MEDIA QUERIES RESPONSIVAS
+=========================== */
+
+/* Tablets medianas */
+@media (max-width: 992px) {
+  body {
+    font-size: 18px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+
+  .menu-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+}
+
+/* Móviles (celulares) */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header .logo {
+    width: 100px;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .menu-section {
+    padding: 2rem 1rem;
+  }
+
+  .menu-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .product-card img {
+    height: 130px;
+  }
+
+  .precio {
+    font-size: 1.3rem;
+  }
+
+  #precios, #horarios, #promociones, #contacto {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .reseñas-section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
