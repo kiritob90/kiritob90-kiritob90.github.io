@@ -9,7 +9,6 @@
 }
 
 body {
-  background: url('https://www.transparenttextures.com/patterns/coffee-wallpaper.png');
   background-color: #e0c7a9;
   color: #4B2E2B;
   line-height: 1.6;
@@ -27,7 +26,7 @@ header {
   text-align: center;
   padding: 2rem 1rem;
   position: relative;
-  background-image: url('/imagenes/00fv.jpeg');
+  background-image: url('imagenes/00fv.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -481,4 +480,5 @@ footer {
     font-size: 0.8rem;
   }
 }
+
 
