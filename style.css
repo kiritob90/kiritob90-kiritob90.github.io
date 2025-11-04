@@ -26,7 +26,7 @@ header {
   text-align: center;
   padding: 2rem 1rem;
   position: relative;
-  background-image: url('/imagenes/00fv.jpeg');
+  background-image: url('imagenes/00fv.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -480,6 +480,7 @@ footer {
     font-size: 0.8rem;
   }
 }
+
 
 
 
