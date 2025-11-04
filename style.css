@@ -40,7 +40,7 @@ header h1 {
 }
 
 header .logo {
-  width: 200px;
+  width: 100px;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -480,6 +480,7 @@ footer {
     font-size: 0.8rem;
   }
 }
+
 
 
 
