@@ -7,28 +7,28 @@
    // Diccionario de ingredientes
    const ingredientesPorProducto = {
     // Cafés con Agua
-    "Espresso simple": ["Café espresso", "vaso de Agua"],
-    "Espresso doble": ["Doble café espresso", "vaso de Agua"],
+    "Espresso simple": ["Café espresso", "Vaso de Agua"],
+    "Espresso doble": ["Doble café espresso", "Vaso de Agua"],
     "Espresso Macchiato": ["Café espresso", "Una gota de leche espumada"],
-    "Espresso Bombón": ["Café espresso", "Leche condensada","leche texturizada"],
+    "Espresso Bombón": ["Café espresso", "Leche dulce","Leche texturizada"],
     "Americano": ["Café espresso", "Agua caliente"],
   
     // Cafés con Leche
-    "Capuchino simple": ["Café espresso", "Leche texturizada", "canela en polvo"],
+    "Capuchino simple": ["Café espresso", "Leche texturizada", "Canela en polvo"],
     "Capuchino doble": ["Doble café espresso", "Leche vaporizada", "Espuma de leche"],
     "Submarino": ["Leche caliente", "Chocolate oscuro", "Café espresso (opcional)"],
-    "Bombita de chocolate": ["Leche", "Chocolate", "Espuma de leche","masmello"],
+    "Bombita de chocolate": ["Leche", "Chocolate", "Espuma de leche","Masmello"],
   
     // Cafés Latte
     "Latte clásico": ["Café espresso", "Leche vaporizada"],
-    "Latte caramelo": ["Café espresso", "Leche vaporizada", "esencia de caramelo"],
-    "Latte vainilla": ["Café espresso", "Leche vaporizada", "esencia de vainilla"],
+    "Latte caramelo": ["Café espresso", "Leche vaporizada", "Esencia de caramelo"],
+    "Latte vainilla": ["Café espresso", "Leche vaporizada", "Esencia de vainilla"],
   
     // Cafés con Crema
-    "Capuchino simple": ["Café espresso", "Leche vaporizada", "Crema batida", "canela en polvo"],
+    "Capuchino simple": ["Café espresso", "Leche vaporizada", "Crema batida", "Canela en polvo"],
     "Capuchino doble": ["Doble café espresso", "Leche vaporizada", "Crema batida"],
     "Mokachino": ["Café espresso", "Leche vaporizada", "Chocolate", "Crema batida"],
-    "Submarino": ["Leche caliente", "Chocolate oscuro", "Crema batida", "canela en polvo"],
+    "Submarino": ["Leche caliente", "Chocolate oscuro", "Crema batida", "Canela en polvo"],
   
     // Cafés Fríos
     "Latte frío": ["Café espresso frío", "Leche fría", "Hielo"],
