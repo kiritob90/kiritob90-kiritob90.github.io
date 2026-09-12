@@ -1,635 +1,1293 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Montenegro Alvestegui, estudio jurídico especializado en Derecho Corporativo en La Paz, Bolivia.">
-  <title>Montenegro Alvestegui | Estudio Jurídico</title>
+
+  <meta name="description" content="Guía Legal Tech para crear, formalizar y proteger empresas tecnológicas en Bolivia.">
+
+  <title>Montenegro Alvestegui</title>
 
   <style>
-    :root{
-      --brown:#3b2418;
-      --brown2:#5a3826;
-      --gold:#c49a6c;
-      --gold-light:#ead8c5;
-      --cream:#f7f4ee;
-      --white:#fff;
-      --text:#24313d;
-      --muted:#687684;
-      --line:#dfd0c3;
-      --shadow:0 15px 40px rgba(59,36,24,.12);
-    }
+
+:root {
+  --brown: #640203;
+  --brown2: #640203;
+  --gold: #ffffff;
+  --gold-light: #ffffff;
+  --cream: #f7f4ee;
+  --white: #fff;
+  --text: #24313d;
+  --muted: #687684;
+  --line: #dfd0c3;
+  --shadow: 0 15px 40px rgba(59,36,24,.12);
+}
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     html{scroll-behavior:smooth}
+
     body{
+
       font-family:Arial,Helvetica,sans-serif;
+
       color:var(--text);
+
       background:var(--cream);
+
       line-height:1.6;
+
     }
+    .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.hero-image {
+    flex: 0 0 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 500px;
+    height: 600px;
+    object-fit: contain;
+    display: block;
+    padding-bottom: 10px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 800px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 300px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+}
+
     a{text-decoration:none}
+
     .container{width:min(1120px,92%);margin:auto;position:relative;z-index:2}
 
-    /* TOPBAR */
+    /* *TOPBAR* */
+
     .topbar{
+
       background:#24150f;
+
       color:var(--gold-light);
+
       font-size:13px;
+
       padding:8px 0;
+
     }
+
     .topbar .container{
+
       display:flex;
+
       justify-content:flex-end;
+
       gap:24px;
+
       flex-wrap:wrap;
+
     }
+
     .topbar a{color:var(--gold-light)}
 
-    /* HEADER */
+    /* *HEADER* */
+
     header{
+
       min-height:92vh;
+
       background:linear-gradient(135deg,var(--brown),var(--brown2));
+
       color:#fff;
+
       display:flex;
+
       align-items:center;
+
       position:relative;
+
       overflow:hidden;
+
     }
+
     header:before,header:after{
+
       content:"";
+
       position:absolute;
+
       border:1px solid rgba(196,154,108,.25);
+
       border-radius:50%;
+
       pointer-events:none;
+
     }
+
     header:before{
+
       width:560px;height:560px;
+
       right:-180px;top:-190px;
+
     }
+
     header:after{
+
       width:360px;height:360px;
+
       right:40px;bottom:-200px;
+
     }
 
     nav{
+
       position:absolute;
+
       top:0;left:0;right:0;
+
       padding:23px 4%;
+
       display:flex;
+
       justify-content:space-between;
+
       align-items:center;
+
       z-index:10;
+
     }
+
     .brand{
+
       color:#fff;
+
       font-size:20px;
+
       font-weight:700;
+
       letter-spacing:2px;
+
     }
+
     .brand span{color:var(--gold)}
+
     .links{display:flex;align-items:center;gap:25px}
+
     .links a{
+
       color:#fff;
+
       font-size:14px;
+
       transition:.25s;
+
     }
+
     .links a:hover{color:var(--gold)}
+
     .menu-btn{
+
       display:none;
+
       border:1px solid rgba(255,255,255,.4);
+
       background:transparent;
+
       color:white;
+
       padding:8px 11px;
+
       border-radius:5px;
+
       font-size:20px;
+
       cursor:pointer;
+
     }
 
     .hero{max-width:780px;padding-top:65px}
+
     .hero-badge{
+
       display:inline-flex;
+
       align-items:center;
+
       gap:9px;
+
       border:1px solid rgba(196,154,108,.5);
+
       padding:8px 14px;
+
       border-radius:30px;
+
       margin-bottom:22px;
+
       color:var(--gold-light);
+
       font-size:12px;
+
       letter-spacing:1.5px;
+
       text-transform:uppercase;
+
     }
+
     .hero-badge svg{width:16px;height:16px;fill:var(--gold)}
+
     h1{
+
       font-family:Georgia,serif;
+
       font-size:clamp(42px,7vw,78px);
+
       line-height:1.05;
+
       margin-bottom:22px;
+
     }
+
     .hero p{
+
       font-size:20px;
+
       color:#dce5ed;
+
       max-width:650px;
+
       margin-bottom:32px;
+
     }
+
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
     .btn{
+
       display:inline-flex;
+
       align-items:center;
+
       justify-content:center;
+
       gap:9px;
+
       padding:14px 24px;
+
       border-radius:5px;
+
       font-weight:700;
+
       transition:.25s;
+
     }
-    .btn-primary{background:var(--gold);color:var(--brown)}
-    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    
+
+    .btn-primary {
+  background: var(--gold);
+  color: rgb(81, 1, 1);
+}
+
+    .btn-primary:hover{transform:translateY(-4px);filter:brightness(1.08)}
+
     .btn-outline{border:1px solid rgba(255,255,255,.55);color:#fff}
+
     .btn-outline:hover{background:#fff;color:var(--brown)}
 
-    /* TRUST */
+    /* *TRUST* */
+
     .trust-strip{
+
       background:#f1e8df;
+
       border-top:1px solid var(--line);
+
       border-bottom:1px solid var(--line);
+
     }
+
     .trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+
     .trust-item{
+
       min-height:118px;
+
       padding:24px 30px;
+
       display:flex;
+
       align-items:center;
+
       gap:17px;
+
       border-right:1px solid var(--line);
+
     }
+
     .trust-item:last-child{border:0}
+
     .trust-icon{
+
       width:50px;height:50px;min-width:50px;
+
       border-radius:50%;
+
       background:var(--brown);
+
       color:var(--gold);
+
       border:1px solid var(--gold);
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
+
       font-size:12px;
+
       font-weight:700;
+
     }
+
     .trust-item strong{
+
       display:block;
+
       font-family:Georgia,serif;
+
       font-size:17px;
+
     }
+
     .trust-item small{color:#806d5e}
 
     section{padding:85px 0}
+
     .section-title{text-align:center;margin-bottom:45px}
+
     .section-title h2{
+
       font-family:Georgia,serif;
+
       color:var(--brown);
+
       font-size:40px;
+
     }
+
     .section-title p{color:var(--muted);margin-top:8px}
 
-    /* ABOUT */
+    /* *ABOUT* */
+
     .about{
+
       display:grid;
+
       grid-template-columns:1fr 1fr;
+
       gap:55px;
+
       align-items:center;
-    }
-    .eyebrow{
-      color:#a17d39;
-      font-weight:700;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      font-size:13px;
-      margin-bottom:12px;
-    }
-    .about h2{
-      font-family:Georgia,serif;
-      font-size:40px;
-      color:var(--brown);
-      margin-bottom:20px;
-      line-height:1.15;
-    }
-    .about p{color:var(--muted);margin-bottom:15px}
-    .about-box{
-      background:var(--brown);
-      color:#fff;
-      padding:45px;
-      border-radius:9px;
-      box-shadow:var(--shadow);
-    }
-    .initials{
-      width:85px;height:85px;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-family:Georgia,serif;
-      font-size:30px;
-      margin-bottom:25px;
+
     }
 
-    /* CARDS */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{
-      background:#fff;
-      padding:32px;
-      border-radius:8px;
-      box-shadow:var(--shadow);
-      border-top:3px solid var(--gold);
-      transition:.25s;
-    }
-    .card:hover{transform:translateY(-5px)}
-    .number{color:var(--gold);font-weight:700;font-size:14px}
-    .card h3{
-      color:var(--brown);
-      margin:12px 0 8px;
+    .eyebrow {
+  color: #ff6262;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+    .about h2{
+
       font-family:Georgia,serif;
-      font-size:23px;
+
+      font-size:40px;
+
+      color:var(--brown);
+
+      margin-bottom:20px;
+
+      line-height:1.15;
+
     }
+
+    .about p{color:var(--muted);margin-bottom:15px}
+
+    .about-box{
+
+      background:var(--brown);
+
+      color:#fff;
+
+      padding:45px;
+
+      border-radius:9px;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .initials{
+
+      width:85px;height:85px;
+
+      border:1px solid var(--gold);
+
+      color:var(--gold);
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      font-family:Georgia,serif;
+
+      font-size:30px;
+
+      margin-bottom:25px;
+
+    }
+
+    /* *CARDS* */
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+    .card{
+
+      background:#fff;
+
+      padding:32px;
+
+      border-radius:8px;
+
+      box-shadow:var(--shadow);
+
+      border-top:3px solid var(--gold);
+
+      transition:.25s;
+
+    }
+
+    .card:hover{transform:translateY(-5px)}
+
+    .number{color:var(--gold);font-weight:700;font-size:14px}
+
+    .card h3{
+
+      color:var(--brown);
+
+      margin:12px 0 8px;
+
+      font-family:Georgia,serif;
+
+      font-size:23px;
+
+    }
+
     .card p{color:var(--muted)}
 
-    /* SOCIAL */
-    .social-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:16px;
+    
+    .tech-intro{
+      max-width:760px;
+      margin:0 auto 38px;
+      text-align:center;
+      color:var(--muted);
+      font-size:17px;
     }
-    .social-card{
-      min-height:155px;
-      background:#fff;
-      border:1px solid #eadfd6;
-      border-radius:10px;
-      padding:22px 18px;
+    .tech-step{
       display:flex;
-      flex-direction:column;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      background:#fbfaf8;
+      border:1px solid #eadfd6;
+      border-radius:8px;
+    }
+    .tech-step-num{
+      width:34px;
+      height:34px;
+      min-width:34px;
+      border-radius:50%;
+      display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      gap:10px;
-      color:var(--brown);
-      transition:.25s;
-      box-shadow:0 8px 25px rgba(59,36,24,.07);
+      background:var(--brown);
+      color:var(--gold);
+      font-weight:700;
+      font-size:13px;
     }
-    .social-card:hover{
-      transform:translateY(-5px);
-      box-shadow:var(--shadow);
-      border-color:var(--gold);
+    .tech-step strong{color:var(--brown)}
+    .tech-note{
+      margin-top:28px;
+      padding:20px 22px;
+      border-left:4px solid var(--gold);
+      background:#f1e8df;
+      border-radius:6px;
+      color:#655448;
+    }
+    .tech-note strong{color:var(--brown)}
+    @media(max-width:760px){
+      .cards{grid-template-columns:1fr}
+      .about-box{padding:30px 25px}
     }
 
-    /* ICONOS SOCIALES */
-    .social-icon{
-      width:64px;height:64px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#f1e8df;
-      color:var(--brown);
+    /* *SOCIAL* */
+
+    .social-grid{
+
+      display:grid;
+
+      grid-template-columns:repeat(5,1fr);
+
+      gap:16px;
+
     }
+
+    .social-card{
+
+      min-height:155px;
+
+      background:#fff;
+
+      border:1px solid #eadfd6;
+
+      border-radius:10px;
+
+      padding:22px 18px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      align-items:center;
+
+      justify-content:center;
+
+      text-align:center;
+
+      gap:10px;
+
+      color:var(--brown);
+
+      transition:.25s;
+
+      box-shadow:0 8px 25px rgba(59,36,24,.07);
+
+    }
+
+    .social-card:hover{
+
+      transform:translateY(-5px);
+
+      box-shadow:var(--shadow);
+
+      border-color:var(--gold);
+
+    }
+
+    /* *ICONOS SOCIALES* */
+
+    .social-icon{
+
+      width:64px;height:64px;
+
+      border-radius:18px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      background:#f1e8df;
+
+      color:var(--brown);
+
+    }
+
     .social-icon svg{width:34px;height:34px;fill:currentColor}
+
     .social-info strong{display:block;font-size:15px}
+
     .social-info small{display:block;color:#8a7668;font-size:12px;margin-top:2px}
 
     .location-box{
+
       margin-top:35px;
+
       background:#f1e8df;
+
       border-left:4px solid var(--gold);
+
       padding:20px 24px;
+
       border-radius:6px;
+
       display:flex;
+
       align-items:center;
+
       gap:16px;
+
     }
+
     .location-icon{
+
       width:46px;height:46px;min-width:46px;
+
       border-radius:50%;
+
       background:var(--brown);
+
       color:var(--gold);
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
+
     }
+
     .location-icon svg{width:22px;height:22px;fill:currentColor}
+
     .location-box strong{color:var(--brown)}
+
     .location-box p{color:#756357;margin-top:3px}
 
-    /* CONTACT */
+    /* *CONTACT* */
+
     .contact{
+
       background:var(--brown);
+
       color:#fff;
+
       text-align:center;
+
     }
+
     .contact h2{
+
       font-family:Georgia,serif;
+
       font-size:42px;
+
       margin-bottom:12px;
+
     }
+
     .contact p{color:#d5dfe7;margin-bottom:28px}
+
     .phone{
+
       display:inline-flex;
+
       align-items:center;
+
       gap:10px;
+
       font-size:24px;
+
       color:var(--gold);
+
       font-weight:700;
+
     }
+
     .phone svg{width:25px;height:25px;fill:currentColor}
 
     footer{
+
       background:#24150f;
+
       color:#aebbc6;
+
       text-align:center;
+
       padding:22px;
+
       font-size:13px;
+
     }
 
-    /* RESPONSIVE */
+    /* *RESPONSIVE* */
+
     @media(max-width:950px){
+
       .social-grid{grid-template-columns:repeat(3,1fr)}
+
     }
+
     @media(max-width:760px){
+
       nav{padding:18px 4%}
+
       .menu-btn{display:block}
+
       .links{
+
         display:none;
+
         position:absolute;
+
         top:68px;left:4%;right:4%;
+
         background:#24150f;
+
         padding:15px;
+
         border-radius:8px;
+
         flex-direction:column;
+
         align-items:stretch;
+
         gap:0;
+
         box-shadow:var(--shadow);
+
       }
+
       .links.open{display:flex}
+
       .links a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,.1)}
+
       .links a:last-child{border:0}
+
       header{min-height:86vh}
+
       .hero{padding-top:80px}
+
       .hero p{font-size:18px}
+
       .trust-grid,.about,.cards{grid-template-columns:1fr}
+
       .trust-item{border-right:0;border-bottom:1px solid var(--line);min-height:100px}
+
       .trust-item:last-child{border-bottom:0}
+
       .about{gap:30px}
+
       section{padding:60px 0}
+
       .social-grid{grid-template-columns:repeat(2,1fr)}
+
       .section-title h2,.about h2{font-size:34px}
+
     }
+
     @media(max-width:480px){
+
       .topbar .container{justify-content:center;gap:10px}
+
       .brand{font-size:15px}
+
       h1{font-size:42px}
+
       .hero-actions{flex-direction:column}
+
       .btn{width:100%}
+
       .social-grid{grid-template-columns:1fr 1fr}
+
       .social-card{min-height:145px;padding:16px 10px}
+
       .social-icon{width:56px;height:56px;border-radius:15px}
+
       .social-icon svg{width:30px;height:30px}
+
       .location-box{align-items:flex-start}
+
     }
+
   </style>
+
 </head>
 
 <body>
 
   <div class="topbar">
+
     <div class="container">
+
       <a href="tel:+59170549665">☎ +591 70549665</a>
+
       <span>Estudio Jurídico</span>
+
       <span>La Paz · Bolivia</span>
+
     </div>
+
   </div>
 
   <header id="inicio">
+    
     <nav>
+
       <a href="#inicio" class="brand">MONTENEGRO <span>ALVESTEGUI</span></a>
 
       <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
 
       <div class="links" id="menu">
+
         <a href="#inicio">Inicio</a>
+
         <a href="#perfil">Perfil</a>
+
         <a href="#especialidad">Especialidad</a>
+
         <a href="#redes">Redes</a>
+
         <a href="#contacto">Hablemos de tu caso</a>
+
       </div>
+
     </nav>
 
     <div class="container">
+
       <div class="hero">
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Zm0 4 4 1.5V11c0 3.2-1.8 6.2-4 7.2C9.8 17.2 8 14.2 8 11V7.5L12 6Z"/></svg>
-          ESTUDIO JURÍDICO · DERECHO CORPORATIVO
+
+        <div class="hero-content">
+      
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Zm0 4 4 1.5V11c0 3.2-1.8 6.2-4 7.2C9.8 17.2 8 14.2 8 11V7.5L12 6Z"/>
+            </svg>
+            ESTUDIO JURÍDICO · DERECHO CORPORATIVO
+          </div>
+      
+          <h1>Impulsa tu empresa Tech con respaldo jurídico.</h1>
+      
+          <p>
+            Protegemos tus intereses, fortalecemos tus decisiones y acompañamos
+            el crecimiento de tu empresa con respaldo jurídico especializado.
+          </p>
+      
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/59170549665" target="_blank" rel="noopener">
+              Consultar por WhatsApp
+            </a>
+      
+            <a class="btn btn-outline" href="#perfil">
+              Conocer perfil
+            </a>
+          </div>
+      
         </div>
-
-        <h1>Soluciones jurídicas que protegen lo que has construido.</h1>
-
-        <p>
-          Protegemos tus intereses, fortalecemos tus decisiones y acompañamos
-          el crecimiento de tu empresa con respaldo jurídico especializado.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/59170549665" target="_blank" rel="noopener">
-            Consultar por WhatsApp
-          </a>
-          <a class="btn btn-outline" href="#perfil">Conocer perfil</a>
+      
+        <div class="hero-image">
+          <img src="001.jpg" alt="Justicia">
         </div>
+      
       </div>
+
     </div>
+
   </header>
 
   <section class="trust-strip" aria-label="Ventajas profesionales">
+
     <div class="container trust-grid">
+
       <div class="trust-item">
+
         <span class="trust-icon">01</span>
+
         <div><strong>Experiencia y estrategia</strong><small>Decisiones jurídicas con visión empresarial</small></div>
+
       </div>
+
       <div class="trust-item">
+
         <span class="trust-icon">02</span>
+
         <div><strong>Atención personalizada</strong><small>Soluciones adaptadas a cada necesidad</small></div>
+
       </div>
+
       <div class="trust-item">
+
         <span class="trust-icon">03</span>
+
         <div><strong>Respaldo profesional</strong><small>Compromiso con tus intereses</small></div>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="perfil">
+
     <div class="container about">
+
       <div>
+
         <div class="eyebrow">Perfil profesional</div>
+
         <h2>Tu tranquilidad jurídica comienza con una buena decisión</h2>
+
         <p><strong>Dra. Ana Katherine Montenegro Alvestegui</strong></p>
+
         <p>Abogada y especialista en Derecho Corporativo.</p>
+
         <p>
+
           En Montenegro Alvestegui brindamos atención jurídica con visión
+
           estratégica, compromiso y enfoque empresarial. Convertimos las
+
           necesidades legales de nuestros clientes en soluciones claras y eficientes.
+
         </p>
+
       </div>
 
       <div class="about-box">
+
         <div class="initials">AK</div>
+
         <h3 style="font-family:Georgia,serif;font-size:28px;margin-bottom:12px">
+
           Derecho Corporativo
+
         </h3>
+
         <p>
+
           Estrategia legal, prevención de riesgos y acompañamiento jurídico
+
           para empresas y profesionales.
+
         </p>
+
       </div>
+
     </div>
+
   </section>
 
-  <section id="especialidad">
-    <div class="container">
-      <div class="section-title">
-        <h2>Especialidad</h2>
-        <p>Soluciones jurídicas para empresas y negocios</p>
-      </div>
 
-      <div class="cards">
-        <div class="card">
-          <div class="number">01</div>
-          <h3>Derecho Corporativo</h3>
-          <p>Asesoramiento especializado para acompañar decisiones empresariales, prevenir riesgos y proteger los intereses de nuestros clientes.</p>
-        </div>
 
-        <div class="card">
-          <div class="number">02</div>
-          <h3>Asesoría jurídica</h3>
-          <p>Orientación jurídica clara y estratégica para afrontar situaciones legales con mayor seguridad.</p>
-        </div>
-
-        <div class="card">
-          <div class="number">03</div>
-          <h3>Atención profesional</h3>
-          <p>Atención personalizada y profesional para conocer tu caso y definir el mejor camino jurídico.</p>
-        </div>
-      </div>
+<section id="especialidad">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Guía práctica</div>
+      <h2>Cómo crear una empresa Tech en Bolivia</h2>
+      <p>Los puntos esenciales para comenzar, formalizar y proteger tu negocio tecnológico.</p>
     </div>
-  </section>
 
-  <section id="redes">
+    <p class="tech-intro">
+      Si vas a crear una startup, una app, un SaaS o un negocio de software,
+      estos son los aspectos legales principales que debes considerar.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="number">01 · SOCIEDAD</div>
+        <h3>Elige el tipo de empresa</h3>
+        <p><strong>S.A.S.</strong> — Recomendada para startups y emprendimientos que comienzan.</p>
+        <p><strong>S.R.L.</strong> — Alternativa para empresas con varios socios.</p>
+        <p><strong>S.A.</strong> — Adecuada para estructuras que buscan crecer y atraer inversión.</p>
+      </article>
+
+      <article class="card">
+        <div class="number">02 · TRÁMITES</div>
+        <h3>Formaliza la empresa</h3>
+        <div style="display:grid;gap:10px;margin-top:15px;">
+          <div class="tech-step"><span class="tech-step-num">1</span><div><strong>Nombre comercial</strong><br>Reserva el nombre correspondiente.</div></div>
+          <div class="tech-step"><span class="tech-step-num">2</span><div><strong>Constitución y estatutos</strong><br>Define la sociedad y su objeto empresarial.</div></div>
+          <div class="tech-step"><span class="tech-step-num">3</span><div><strong>Matrícula de Comercio</strong><br>Realiza la inscripción empresarial.</div></div>
+          <div class="tech-step"><span class="tech-step-num">4</span><div><strong>NIT</strong><br>Realiza el registro tributario correspondiente.</div></div>
+          <div class="tech-step"><span class="tech-step-num">5</span><div><strong>Licencia de Funcionamiento</strong><br>Gestiona la autorización municipal que corresponda.</div></div>
+          <div class="tech-step"><span class="tech-step-num">6</span><div><strong>Registro de marca</strong><br>Protege el nombre o signo distintivo.</div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="number">03 · PROTECCIÓN</div>
+        <h3>Protege tu tecnología</h3>
+        <p><strong>Propiedad intelectual:</strong> establece quién es propietario del código y de la aplicación.</p>
+        <p><strong>Confidencialidad:</strong> protege información, documentación y código.</p>
+        <p><strong>Datos personales:</strong> contempla las obligaciones aplicables cuando la app maneje datos.</p>
+      </article>
+
+      <article class="card">
+        <div class="number">04 · SOCIOS</div>
+        <h3>Evita conflictos</h3>
+        <p>Los acuerdos entre socios deben definir responsabilidades, participación y reglas para la propiedad intelectual.</p>
+        <p><strong>Vesting:</strong> puede establecerse un mecanismo para que un socio técnico obtenga progresivamente sus acciones según lo acordado.</p>
+      </article>
+
+      <article class="card">
+        <div class="number">05 · INTERNACIONAL</div>
+        <h3>Bolivia vs. Chile</h3>
+        <p>La guía compara la <strong>S.A.S.</strong> boliviana con la <strong>SpA</strong> chilena.</p>
+        <p>Según el material proporcionado, Chile presenta un ecosistema de inversión startup más desarrollado y algunos fundadores bolivianos consideran una SpA para buscar inversión.</p>
+      </article>
+
+      <article class="card">
+        <div class="number">06 · SERVICIOS</div>
+        <h3>Servicios Legal Tech</h3>
+        <p>Constitución de empresas, términos y condiciones, políticas de privacidad, contratos, registro de software y marca, y revisión legal para procesos de inversión.</p>
+      </article>
+    </div>
+
+    <div class="about-box" style="margin-top:32px;">
+      <div class="initials">LT</div>
+      <h3 style="font-family:Georgia,serif;font-size:28px;margin-bottom:12px;">
+        Lo más importante
+      </h3>
+      <p>
+        Una empresa Tech necesita una estructura empresarial adecuada,
+        trámites en regla y contratos que protejan su código, marca,
+        socios y relaciones comerciales.
+      </p>
+    </div>
+
+    <div class="tech-note">
+      <strong>Nota importante:</strong>
+      Esta página resume el material proporcionado. Los requisitos, plazos,
+      impuestos y referencias legales deben verificarse con las instituciones
+      correspondientes o con un profesional antes de tomar decisiones.
+    </div>
+  </div>
+</section>
+
+<section id="redes">
+
     <div class="container">
+
       <div class="section-title">
+
         <h2>Conecta con Montenegro Alvestegui</h2>
+
         <p>Información, novedades y contenido jurídico desde nuestros canales digitales</p>
+
       </div>
 
       <div class="social-grid">
 
-        <!-- FACEBOOK -->
+        <!-- *FACEBOOK* -->
+
         <a class="social-card" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+
           <span class="social-icon">
+
             <svg viewBox="0 0 24 24" aria-hidden="true">
+
               <path d="M13.5 21v-7h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v7h3.4Z"/>
+
             </svg>
+
           </span>
+
           <span class="social-info"><strong>Facebook</strong><small>Perfil oficial</small></span>
+
         </a>
 
-        <!-- INSTAGRAM -->
+        <!-- *INSTAGRAM* -->
+
         <a class="social-card" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+
           <span class="social-icon">
+
             <svg viewBox="0 0 24 24" aria-hidden="true">
+
               <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+
               <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+
               <circle cx="17.4" cy="6.7" r="1.2"/>
+
             </svg>
+
           </span>
+
           <span class="social-info"><strong>Instagram</strong><small>Perfil profesional</small></span>
+
         </a>
 
-        <!-- LINKEDIN -->
+        <!-- *LINKEDIN* -->
+
         <a class="social-card" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+
           <span class="social-icon">
+
             <svg viewBox="0 0 24 24" aria-hidden="true">
+
               <path d="M5.2 8.7H2.3V21h2.9V8.7ZM3.75 3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM21.7 13.9c0-3.7-2-5.4-4.7-5.4-2.2 0-3.2 1.2-3.8 2V8.7h-2.9V21h2.9v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.8 2 3.3V21h2.9v-7.1Z"/>
+
             </svg>
+
           </span>
+
           <span class="social-info"><strong>LinkedIn</strong><small>Perfil profesional</small></span>
+
         </a>
 
-        <!-- TIKTOK -->
+        <!-- *TIKTOK* -->
+
         <a class="social-card" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+
           <span class="social-icon">
+
             <svg viewBox="0 0 24 24" aria-hidden="true">
+
               <path d="M14.2 3h3.1c.3 1.8 1.4 3.1 3.2 3.7v3.2c-1.2-.1-2.3-.5-3.2-1.1v5.8a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.3a3 3 0 1 0 1.9 2.8V3Z"/>
+
             </svg>
+
           </span>
+
           <span class="social-info"><strong>TikTok</strong><small>Canal profesional</small></span>
+
         </a>
 
-        <!-- YOUTUBE -->
+        <!-- *YOUTUBE* -->
+
         <a class="social-card" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+
           <span class="social-icon">
+
             <svg viewBox="0 0 24 24" aria-hidden="true">
+
               <path d="M21.6 7.1a2.8 2.8 0 0 0-2-2C17.8 4.6 12 4.6 12 4.6s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 8.9 2 12 2 12s0 3.1.4 4.9a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2c.4-1.8.4-4.9.4-4.9s0-3.1-.4-4.9ZM10 15.7V8.3l6.2 3.7-6.2 3.7Z"/>
+
             </svg>
+
           </span>
+
           <span class="social-info"><strong>YouTube</strong><small>Contenido jurídico</small></span>
+
         </a>
 
       </div>
 
       <div class="location-box">
+
         <span class="location-icon">
+
           <svg viewBox="0 0 24 24" aria-hidden="true">
+
             <path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/>
+
           </svg>
+
         </span>
+
         <div>
+
           <strong>Ubicación profesional</strong>
+
           <p>Calle Yanacocha #448, Edificio Terrazas, Piso 1, Oficina 20, La Paz, Bolivia</p>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="contacto" class="contact">
+
     <div class="container">
+
       <h2>Hablemos de tu caso</h2>
+
       <p>¿Necesitas orientación jurídica? Da el primer paso y conversemos sobre tu caso.</p>
 
       <a class="phone" href="https://wa.me/59170549665" target="_blank" rel="noopener">
+
         <svg viewBox="0 0 24 24">
+
           <path d="M20 3.9A10 10 0 0 0 4.3 16.2L3 21l4.9-1.3A10 10 0 1 0 20 3.9ZM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1-.2.2-.5.7-.6.8-.1.2-.3.2-.5.1-1.5-.7-2.5-1.2-3.5-2.7-.3-.5.3-.5.8-1.7.1-.2 0-.4-.1-.5-.1-.1-.5-1.2-.7-1.6-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.5c.1.2 1.8 2.8 4.4 3.9 1.7.7 2.4.8 3.3.7.5-.1 1.3-.5 1.5-1 .2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3Z"/>
+
         </svg>
+
         +591 70549665
+
       </a>
+
     </div>
+
   </section>
 
   <footer>
+
     © 2026 Montenegro Alvestegui · Estudio Jurídico · Derecho Corporativo
+
   </footer>
 
   <script>
+
     function toggleMenu(){
+
       document.getElementById("menu").classList.toggle("open");
+
     }
 
     document.querySelectorAll("#menu a").forEach(link=>{
+
       link.addEventListener("click",()=>{
+
         document.getElementById("menu").classList.remove("open");
+
       });
+
     });
+
   </script>
 
 </body>
-</html>
 
+</html>
 
 
 
